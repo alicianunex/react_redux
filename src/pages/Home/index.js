@@ -19,14 +19,13 @@ export default () => {
     setSearchText(event.target.value);
   };
 
-  const handleCleanTextClick = (event) => {
-    console.log(10);
+  const handleClearTextClick = (event) => {
+    setSearchText('');
   };
   const handleSearchTextClick = (event) => {
-    console.log(10);
+    history.push(`/results?movieName=${searchText}`);
   };
 
-  console.log(searchText);
   return (
     <Container className={classes.container}>
       <Card className={classes.cardContainer}>
@@ -48,7 +47,7 @@ export default () => {
           <Button
             variant="contained"
             size="large"
-            onClick={handleCleanTextClick}
+            onClick={handleClearTextClick}
           >
             Limpiar
           </Button>
